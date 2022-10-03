@@ -16,28 +16,38 @@
     <figcaption>Multiple purple agents navigating a course of yellow obstacles towards the greeen goal</figcaption>
 </figure>
 
-<h2>Description of features and timestamps</h2>
+<h2>Description of features</h2>
 
 
 <h2>List of features attempted</h2>
 <ul>
-    <li></li>
+    <li>Single Agent Navigation</li>
+    <li>User Senario Editing</li>
+    <li>Real Time User Interaction</li>
+    <li>Multiple Agents Planning</li>
+    <li>Crowd Simulation</li>
 </ul>
 
 <h2>Code</h2>
-<p>I modified the original Proj1_Test.pde code to run my simulations, modified PRM.pde to run my path finding, and used Vec2.pde and CollisionLibrary.pde to assist with vector math and collision detection, respectively.</p><br>
+<p>I modified the original Proj1_Test.pde code to run my simulations, modified PRM.pde to run my path finding, and used Vec2.pde and CollisionLibrary.pde to assist with vector math and collision detection, respectively.</p>
 <a href="https://docs.google.com/document/d/1vQI8y8Pl2QVxR8CvqgVDqaTgguhP0uDk6r4x41r0blQ/edit?usp=sharing">Simulation Code</a><br>
 <a href="https://docs.google.com/document/d/1Sj3M6JfL6Hio5uke-IVI-p2gfXfLMP_62pAmSPSEG4k/edit?usp=sharing">PRM code</a><br>
 <a href="https://docs.google.com/document/d/1a4SgH6X6eDCvVOIOIo8LK7M0cAc4XMQyMkTgajdMaVg/edit?usp=sharing">Vec2 Code</a><br>
 <a href="https://docs.google.com/document/d/1RwN78dRCPT8ewyKvKr6wOkPs0Xf-ePXsAg1nTjT2ZLA/edit?usp=sharing">Collision Library code\n</a><br>
 
 <h2>Tools and Libraries</h2>
-<p>I did not use many external tools and libraries outside of Processing to display the behavior of my simulations.  I did use the Vec2.pde code to deal with 2-dimensional vectors and the CollisionLibrary.pde to work with collisions</p>
+<p>I did not use many external tools and libraries outside of Processing to display the behavior of my simulations.  I did use the Vec2.pde code to deal with 2-dimensional vectors and the CollisionLibrary.pde to work with collisions.</p>
 <h2>Difficulties</h2>
+<h3>A*</h3>
+<p>Initially, I was having trouble getting the A* algorithm to work.  I knew exatly how the A* algorithm worked, but for what ever reason, it was not performing significantly better than BFS.  The problem turned out to be the way I was storing the calculated heuristics.  When ever I would update my goal position, the heuristic wouldn't update, so the searching would favor the location of the previous goal location</p>
+<h3>Fine tuning forces</h3>
+<p>Another thing that took me awhile was figuring out how much each force should be valued.  I have multiple forces:<br> The goal force which guides the agents to their next node in the PRM graph <br> The obsticle force which pushed the agents away from obsticles if they get too close <br> The three boids forces, avoidence, cohesion, and allignment.</p>
+
+
 <h2>Video</h2>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Y9NW_XnbvOk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<p>Agents navigating to a path</p>
+<p>Agents navigating to a path</p><br><br>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iQVaFpbZ4kE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p>Trapped Agents</p>
